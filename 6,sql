@@ -1,0 +1,7 @@
+select avg(salary), p.name, min(p.cost) --6
+from developers d 
+join dev_to_project dtp on dtp.id_dev =d.id 
+join projects p on p.id =dtp.id_projects 
+group by p.name 
+order by min(p.cost)
+;
